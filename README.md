@@ -10,9 +10,8 @@ Show mpd current playnig song lyrics
 ```sh
 go install github.com/ony-boom/mpd-lrc@latest
 ```
-
-Just create a the config file `mpdLrc.toml` at your `XDG_HOME_CONFIG` or `~/.config`.
-Build, and that's it.
+Should work right away, but if not, make sure you to take a look at the example config file,
+then modify the config file to your liking.
 
 ```sh
 cp docs/config_example.toml ~/.config/mpdLrc.toml
