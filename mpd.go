@@ -43,7 +43,7 @@ func (c myMpdConnection) getLrcString() (string, error) {
 	currenSong, _ := c.conn.CurrentSong()
 
 	audioPath := currenSong["file"]
-	path := strings.Replace(audioPath, "mp3", "lrc", 1)
+	path := strings.Replace(audioPath, "m4a", "lrc", 1)
 	fullPath := filepath.Join(getConfig().MusicPath, path)
 
 	bytes, err := os.ReadFile(fullPath)

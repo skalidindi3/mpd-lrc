@@ -22,12 +22,8 @@ func getConfig() Config {
 	var conf Config
 
 	_, err := toml.DecodeFile(getConfigFilePath(), &conf)
-	musicPath, err := filepath.Rel(conf.MusicPath, "/")
-	if err != nil {
-		musicPath = "~/Music"
-	}
-
-	musicPath = strings.Replace(musicPath, "~", os.Getenv("HOME"), 1)
+	musicPath := strings.Replace(conf.MusicPath, "~", os.Getenv("HOME"), 1)
+	conf.MusicPath = musicPath
 
 	if err != nil {
 		return Config{
